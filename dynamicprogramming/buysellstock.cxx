@@ -1,8 +1,12 @@
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-
+#include <string>
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <climits>
+#include <sstream>
 
+using namespace std;
 class Solution {
 public:
     
@@ -15,7 +19,7 @@ public:
 		{
 			if(prices[i] < minPrice)
 				minPrice = prices[i];
-			maxProfit = max(maxProfit, minPrice - prices[i] );
+			maxProfit = max(maxProfit, prices[i] - minPrice );
 		}
 		return maxProfit;
     }
